@@ -50,4 +50,8 @@ function M.setup(user_config)
 	})
 end
 
+function M.config()
+	M.setup()
+end
+
 return M
