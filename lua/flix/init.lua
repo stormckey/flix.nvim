@@ -25,8 +25,7 @@ function M.setup(user_config)
 					local flix_jar_path = vim.fs.joinpath(root_dir, config.flix_jar_path)
 					-- Make sure flix.jar is found in the root directory, otherwise return nil to prevent the LSP server from starting
 					if vim.loop.fs_stat(flix_jar_path) == nil then
-						print("\n")
-						print("Failed to start the LSP server: flix.jar not found in project root (" .. root_dir .. ")!")
+						print("\nFailed to start the LSP server: flix.jar not found in project root (" .. root_dir .. ")!")
 						return nil
 					end
 					return root_dir
