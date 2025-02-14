@@ -22,9 +22,7 @@ function M.setup(user_config)
 					-- Search for flix.toml/flix.jar upwards recursively, with a fallback to the current directory
 					local root_dir = vim.fs.dirname(vim.fs.find({"flix.toml", "flix.jar"}, { path = fname, upward = true })[1])
 						or vim.loop.cwd()
-					print("root dir is " .. root_dir)
 					local flix_jar_path = vim.fs.joinpath(root_dir, config.flix_jar_path)
-					print("flix jar path is " .. flix_jar_path)
 					-- Make sure flix.jar is found in the root directory, otherwise return nil to prevent the LSP server from starting
 					if vim.loop.fs_stat(flix_jar_path) == nil then
 						print(
